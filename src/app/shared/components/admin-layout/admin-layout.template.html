@@ -1,0 +1,51 @@
+<!-- <div class="app-admin-wrap" [dir]="layoutConf.dir">-->
+
+<!-- ONLY REQUIRED FOR **TOP** NAVIGATION LAYOUT -->
+<!--   <app-header-top
+    *ngIf="layoutConf.navigationPos === 'top'"
+    [notificPanel]="notificationPanel"
+
+  </app-header-top> -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button class="logo" routerLink="/admin/dashboard">
+      <img  src="../../../../assets/img/logo-uoc.png" class="logo-uoc" alt="Logo UOC">
+    </a>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" *ngIf="(this._authService.getToken() | async) as token">
+      <ul fxLayout="row" fxLayoutGap="20px">
+        <li *ngIf="token.token=='User_logged'">
+          <button mat-button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>  
+          </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/admin/dashboard">
+                <mat-icon>home</mat-icon>
+                Dashboard
+              </button>
+              <button mat-menu-item routerLink="/admin/profile">
+                <mat-icon>person</mat-icon>
+                Profile
+              </button>
+              <button mat-menu-item routerLink="/admin/offers"> 
+                <mat-icon>keyboard_arrow_right</mat-icon>
+                Offers</button>
+              <button mat-menu-item [routerLink]="['/admin/offers/my-offers']">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+                My Offers</button>
+              <button mat-menu-item routerLink="/admin/config">
+                <mat-icon>settings</mat-icon>
+              Settings</button>
+              <button mat-menu-item routerLink="/"> 
+                  <mat-icon>exit_to_app</mat-icon>
+              Logout</button>
+          </mat-menu>
+        </li>
+      </ul>  
+    </div>  
+  </mat-toolbar-row>
+</mat-toolbar>
+
+  <div class="col-9">
+    <router-outlet></router-outlet>
+  </div>
+

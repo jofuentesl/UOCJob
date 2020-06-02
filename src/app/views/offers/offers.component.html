@@ -1,0 +1,19 @@
+<mat-drawer-container fxLayoutAlign="center">
+  <mat-drawer-content>
+  <h2>
+  Offers
+</h2>
+<mat-divider></mat-divider>
+<div >
+<app-offers-list
+  [user]="user$ | async"
+  [offers]="offers$ | async"
+  *ngIf="isOffersList"
+></app-offers-list>
+<app-offers-profile
+  [user]="user$ | async"
+  *ngIf="!isOffersList"
+></app-offers-profile>
+</div></mat-drawer-content>
+</mat-drawer-container>
+

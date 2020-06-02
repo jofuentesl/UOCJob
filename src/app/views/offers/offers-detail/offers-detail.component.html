@@ -1,0 +1,33 @@
+
+<mat-drawer-container fxLayoutAlign="center">
+  <mat-drawer-content>
+    <h2>
+      Offers Detail
+    </h2>
+    <mat-divider></mat-divider>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item><strong>Job: </strong> {{offer.job.name}} </mat-list-item>
+      <mat-list-item><strong>Company:</strong>{{offer.company.name}}</mat-list-item>
+      <mat-list-item><strong>Date:</strong>{{offer.date}}</mat-list-item>
+      <mat-list-item><strong>Province:</strong>{{offer.province.name}}</mat-list-item>
+      <mat-list-item><strong>Municipe:</strong>{{offer.municipe.name}}</mat-list-item>
+    </mat-list>
+    
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" *ngIf="!isSubscribe()" class="btn btn-primary" (click)="subscribe()">
+      Inscribirse
+    </button>
+    <button mat-raised-button color="warn" *ngIf="isSubscribe()" class="btn btn-danger" (click)="unsubscribe()">
+      Eliminar oferta
+    </button>
+  </mat-card-actions>
+</mat-card>
+</mat-drawer-content>
+</mat-drawer-container>

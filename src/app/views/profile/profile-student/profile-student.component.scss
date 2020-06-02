@@ -1,0 +1,32 @@
+
+
+$mat-card-header-size: 200px!default;
+$mat-padding: 0.25%;
+
+.card{
+	width: 100%;
+	padding-top: $mat-padding;
+}
+.mat-card-avatar{
+	height: $mat-card-header-size;
+	width: $mat-card-header-size;
+	padding-top: $mat-padding;
+	padding-right: 15px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+.mat-card-title{
+	padding-top: 15px;
+}
+
+.flex-container{
+	display: flex;
+	justify-content: space-between;
+	width: 100px;
+}
+
+.button-container{
+	display: flex;
+	justify-content: center;
+	width: 50px;
+}

@@ -1,0 +1,85 @@
+<div class="container" fxLayout="column" fxLayoutGap="30px">
+<div class="row">  
+  <div class="cold-md-12" fxLayoutGap="30px" fxLayoutAlign= "center">
+    <mat-card>
+      <mat-card-header class="card-header">
+        <mat-card-title><i class="material-icons">school</i> Complies with the Degree</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="table-responsive">
+          <table>
+            <thead class="text-primary">
+              <tr>
+                <th>Job</th>
+                <th>Company</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Province</th>
+                <th>Municipe</th>
+                <th>Subscribe</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let offer of offersStudy" fxLayoutGap="30px">
+                <td>{{ offer.job.name }}</td>
+                <td>{{ offer.company.name }}</td>
+                <td>{{ offer.category.name }}</td>
+                <td>{{ offer.date }}</td>
+                <td>{{ offer.province.name }}</td>
+                <td>{{ offer.municipe.name }}</td>
+                <td>{{ offer.subscribe ? 'Sí' : 'No' }}</td>
+                <td>
+                  <div class="flex-container">
+                    <div class="button-container">
+                      <button mat-mini-fab color="primary"><a [routerLink]="[offer.id]">
+                        <mat-icon>visibility</mat-icon></a>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="row">  
+  <div class="cold-md-12" fxLayoutGap="30px" fxLayoutAlign= "center">
+    <mat-card>
+      <mat-card-header class="card-header">
+        <mat-card-title><i class="material-icons">work</i> Others offers </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="table-responsive">
+          <table>
+            <thead class="text-primary">
+              <tr>
+                <th>Job</th>
+                <th>Company</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Province</th>
+                <th>Municipe</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let offer of offersOther" fxLayoutGap="30px">
+                <td>{{ offer.job.name }}</td>
+                <td>{{ offer.company.name }}</td>
+                <td>{{ offer.category.name }}</td>
+                <td>{{ offer.date }}</td>
+                <td>{{ offer.province.name }}</td>
+                <td>{{ offer.municipe.name }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+</div>
