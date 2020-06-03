@@ -9,7 +9,8 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <a mat-button class="logo" routerLink="/admin/dashboard">
-      <img  src="../../../../assets/img/logo-uoc.png" class="logo-uoc" alt="Logo UOC">
+   <img  src='../../../../assets/img/logo-uoc.png' class="logo-uoc" alt="Logo UOC">
+
     </a>
     <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" *ngIf="(this._authService.getToken() | async) as token">
       <ul fxLayout="row" fxLayoutGap="20px">
